@@ -17,6 +17,12 @@ export function parseToDataModel(data) {
 }
 
 export function getCorrectForm(days) {
+    const SIGN_BEFORE_LAST = Math.floor(days % 100 / 10);
+
+    if (SIGN_BEFORE_LAST === 1) {
+        return 'дней';
+    }
+
     const LAST_SIGN = days % 10;
 
     switch (LAST_SIGN) {
